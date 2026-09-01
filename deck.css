@@ -1,0 +1,106 @@
+/* ============================================================
+   DECK — pilha de cartões interativa ("Descubra um pouco mais")
+   Usa os tokens existentes (--paper, --ink, --line, --shadow,
+   --font-display/mono). Cada carta ganha uma cor própria via
+   atributo data-accent, lido pelo deck.js.
+   ============================================================ */
+
+:root{
+  --deck-ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --deck-ease-out: cubic-bezier(.22, 1, .36, 1);
+  --deck-ease-fling: cubic-bezier(.55, 0, 1, .45);
+}
+
+.deck-section{ padding: 4rem 0 5rem; position: relative; }
+.deck-intro{ text-align: center; max-width: 640px; margin: 0 auto 2.5rem; }
+.deck-intro h2{ font-size: clamp(1.8rem, 4vw, 2.6rem); }
+
+.deck-stage{
+  position: relative; max-width: 560px; margin: 0 auto; padding: 0 1rem;
+  display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+}
+.deck-bg{
+  position: absolute; inset: -40px -20px; z-index: 0; pointer-events: none;
+  width: calc(100% + 40px); height: calc(100% + 80px);
+}
+
+.deck{
+  position: relative; z-index: 1; width: min(420px, 88vw); height: 460px;
+  perspective: 1200px;
+}
+.deck-card{
+  position: absolute; inset: 0; margin: auto;
+  background: rgba(255,255,255,.8); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--line); border-radius: 26px;
+  padding: 2rem 2.1rem; display: flex; flex-direction: column; gap: .85rem;
+  box-shadow: 0 30px 60px -22px rgba(20,23,31,.2), 0 0 0 1px rgba(255,255,255,.5) inset;
+  user-select: none; touch-action: none;
+  transform: translateY(calc(var(--stack-i, 0) * 14px)) scale(calc(1 - var(--stack-i, 0) * .045));
+  opacity: calc(1 - var(--stack-i, 0) * .2);
+  z-index: calc(10 - var(--stack-i, 0));
+  filter: blur(calc(var(--stack-i, 0) * 1.1px));
+  transition: transform .5s var(--deck-ease-out), opacity .4s ease, filter .4s ease;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+.deck-card::before{
+  content: ''; position: absolute; inset: 0; border-radius: 26px; padding: 1px;
+  background: linear-gradient(135deg, var(--accent, var(--signal)) 0%, transparent 45%);
+  opacity: .5; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
+.deck-card[data-active="true"]{ pointer-events: auto; cursor: grab; }
+.deck-card.is-dragging{ transition: box-shadow .2s ease; cursor: grabbing; }
+.deck-card.is-leaving{ transition: transform .55s var(--deck-ease-fling), opacity .5s ease; }
+.deck-card.is-entering{ transition: transform .55s var(--deck-ease-spring), opacity .5s ease; }
+.deck-card:focus-visible{ outline: 2px solid var(--signal); outline-offset: 3px; }
+
+.deck-card-num{
+  position: absolute; right: 1.4rem; top: 1rem; font-family: var(--font-display); font-weight: 600;
+  font-size: 3.4rem; color: var(--accent, var(--signal)); opacity: .14; line-height: 1;
+}
+.deck-card-icon{ font-size: 2.1rem; }
+.deck-card h3{ font-size: 1.3rem; margin: 0; }
+.deck-card-line{ color: var(--ink-soft); margin: 0; font-size: 1rem; line-height: 1.5; }
+.deck-card-fact{
+  margin-top: auto; padding-top: .85rem; border-top: 1px dashed var(--line-strong);
+  display: grid; gap: .3rem;
+}
+.deck-card-fact-label{
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--accent, var(--teal));
+}
+.deck-card-fact p{ margin: 0; font-size: .88rem; color: var(--ink-soft); }
+
+/* Controles */
+.deck-controls{ position: relative; z-index: 1; display: flex; align-items: center; gap: 1rem; }
+.deck-btn{
+  width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: var(--paper-2); border: 1px solid var(--line-strong); color: var(--ink);
+  transition: transform .2s ease, border-color .2s ease, color .2s ease;
+}
+.deck-btn:hover{ border-color: var(--signal); color: var(--signal); transform: translateY(-2px); }
+.deck-btn:disabled{ opacity: .35; pointer-events: none; }
+
+.deck-progress{ display: flex; gap: .4rem; }
+.deck-progress span{
+  width: 7px; height: 7px; border-radius: 50%; background: var(--line-strong);
+  transition: background .3s ease, transform .3s ease;
+}
+.deck-progress span.is-active{ background: var(--signal); transform: scale(1.3); }
+
+.deck-hint{
+  position: relative; z-index: 1; font-family: var(--font-mono); font-size: .78rem;
+  color: var(--ink-soft); text-align: center; margin: 0;
+}
+
+@media (max-width: 480px){
+  .deck{ height: 420px; }
+  .deck-card{ padding: 1.6rem 1.5rem; }
+  .deck-card-num{ font-size: 2.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .deck-card{ transition: opacity .25s ease !important; transform: none !important; filter: none !important; }
+  .deck-card:not([data-active="true"]){ display: none; }
+}

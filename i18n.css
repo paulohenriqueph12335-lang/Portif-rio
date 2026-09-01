@@ -1,0 +1,43 @@
+/* ============================================================
+   Barra de progresso de leitura
+   ============================================================ */
+.reading-progress{
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 999;
+  background: transparent; pointer-events: none;
+}
+.reading-progress span{
+  display: block; height: 100%; width: 0%; background: var(--signal);
+  transition: width .1s linear;
+}
+@media (prefers-reduced-motion: reduce){
+  .reading-progress span{ transition: none; }
+}
+
+/* ============================================================
+   Refinamentos de foco/hover — sem alterar o layout existente
+   ============================================================ */
+a, button { transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+:focus-visible{ outline: 2px solid var(--signal); outline-offset: 2px; }
+
+.lang-switch{
+  display: inline-flex; align-items: center; gap: .2rem;
+  background: var(--paper-2); border: 1px solid var(--line-strong); border-radius: 999px;
+  padding: .25rem; margin-top: .35rem;
+}
+.lang-btn{
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-family: var(--font-mono); font-size: .78rem; font-weight: 600;
+  padding: .45rem .75rem; border-radius: 999px; color: var(--ink-soft);
+  background: transparent; border: none; cursor: pointer;
+  transition: background .25s ease, color .25s ease, transform .15s ease;
+}
+.lang-btn:hover{ color: var(--ink); transform: translateY(-1px); }
+.lang-btn.is-active{ background: var(--ink); color: #fff; }
+.lang-btn:focus-visible{ outline: 2px solid var(--signal); outline-offset: 2px; }
+
+@media (min-width: 721px){
+  .lang-switch{ margin-top: 0; margin-left: .5rem; }
+}
+@media (prefers-reduced-motion: reduce){
+  .lang-btn{ transition: none; }
+}

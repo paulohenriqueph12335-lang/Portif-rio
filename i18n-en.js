@@ -33,17 +33,17 @@ window.I18N_EN = {
   cases: {
     eyebrow: "Featured cases",
     title: "Measurable results in relationship, data and operations.",
-    talk: "Talk about this case →",
+    talk: "Talk about this case",
     case4: {
       "tag1": "Business Case · Product & AI",
       "tag2": "2026",
       "title": "Document Translator",
       "desc": "It all started by watching a job full of detail: sworn translation. Public Translation number, book, page, notes in brackets — all done by hand, document by document. The question was the usual one: is there a better way? It turned into a complete system.",
-      "b1": "Complete flow: upload → translation → review → final numbered Word file",
+      "b1": "Complete flow: upload, translation, review and final numbered Word file",
       "b2": "5 languages and 6 formats, with OCR for scanned documents",
       "b3": "Keeps working even when AI or machine translation stops",
       "openBtn": "Open Business Case",
-      "story": "See the story and screens →"
+      "story": "See the story and screens"
     },
     case1: {
       tag1: "Business Case · Automation & BI",
@@ -100,7 +100,7 @@ window.I18N_EN = {
   skills: {
     eyebrow: "Tools I found along the way",
     title: "Curiosity is where my projects begin.",
-    intro: "When someone says \"we've always done it this way.\" ↓ When a spreadsheet starts getting too big. ↓ When a process depends on too many people. ↓ When repetitive tasks steal time. ↓ When the data tells a different story than perception does. That's where I get interested — and that's how I ended up finding these tools along the way, not the other way around.",
+    intro: "When someone says \"we've always done it this way.\" When a spreadsheet starts getting too big. When a process depends on too many people. When repetitive tasks steal time. When the data tells a different story than perception does. That's where I get interested — and that's how I ended up finding these tools along the way, not the other way around.",
     g1: { title: "Customer Success", t1: "Onboarding", t2: "Retention", t3: "Churn Prevention", t4: "Customer Journey", t5: "NPS", t6: "CSAT" },
     g2: { title: "Consulting & Process", t1: "Business Analysis", t2: "Business Intelligence", t3: "Process Improvement", t4: "KPIs/SLAs" },
     g3: { title: "Sales & Business", t1: "B2B Prospecting", t2: "Consultative Sales", t3: "Cross-sell", t4: "Strategic Negotiation" },
@@ -125,7 +125,7 @@ window.I18N_EN = {
   },
   footer: {
     rights: "All rights reserved.",
-    backToTop: "Back to top ↑",
+    backToTop: "Back to top",
     backToPortfolio: "Back to portfolio"
   },
   workspace: {
@@ -492,7 +492,7 @@ window.I18N_EN = {
       "And if I ever run out of things to say... I can grab a guitar and pretend to sing.",
       "And no, it's not all good qualities — I have my flaws, like every human being, okay?",
       "But that part we'll keep as a closely guarded secret.",
-      "Come with me on this journey to find out who I am. ↓"
+      "Come with me on this journey to find out who I am."
     ],
     portrait: {
       eyebrow: "Nice to meet you, this is me",

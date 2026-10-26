@@ -92,8 +92,8 @@ const RENDER = {
       <div class="tw-badge-row">${badges.map(b=>`<span class="tw-badge tw-${b[1]}">${b[0]}</span>`).join('')}</div>
       <div class="tw-section-title">${t(c+'sectionTitle3')}</div>
       <div class="tw-cascade">
-        <span class="tw-stage">${t(c+'stageLocal')}</span><span class="tw-arrow">→</span>
-        <span class="tw-stage">${t(c+'stageCloud')}</span><span class="tw-arrow">→</span>
+        <span class="tw-stage">${t(c+'stageLocal')}</span>
+        <span class="tw-stage">${t(c+'stageCloud')}</span>
         <span class="tw-stage">${t(c+'stageFallback')}</span>
       </div>
       <p class="tw-p">${t(c+'p')}</p>`;
@@ -131,15 +131,15 @@ function archDiagram(){
   const bc = t(c+'diagramBC'), bcSub = t(c+'diagramBCSub');
   const label = t(c+'diagramLabel');
   return `<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
-    <defs><marker id="twArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6b6f79"/></marker></defs>
-    <line x1="150" y1="150" x2="320" y2="80" stroke="#6b6f79" stroke-width="1.2" marker-end="url(#twArrow)"/>
-    <line x1="320" y1="80" x2="150" y2="150" stroke="#6b6f79" stroke-width="1.2" marker-end="url(#twArrow)"/>
-    <line x1="320" y1="220" x2="150" y2="150" stroke="#6b6f79" stroke-width="1.2" marker-end="url(#twArrow)"/>
-    <line x1="150" y1="150" x2="320" y2="220" stroke="#6b6f79" stroke-width="1.2" marker-end="url(#twArrow)"/>
-    <line x1="490" y1="150" x2="320" y2="80" stroke="#6b6f79" stroke-width="1.2" marker-end="url(#twArrow)"/>
-    <line x1="320" y1="80" x2="490" y2="150" stroke="#6b6f79" stroke-width="1.2" marker-end="url(#twArrow)"/>
-    <line x1="490" y1="150" x2="320" y2="220" stroke="#6b6f79" stroke-width="1.2" marker-end="url(#twArrow)"/>
-    <line x1="320" y1="220" x2="490" y2="150" stroke="#6b6f79" stroke-width="1.2" marker-end="url(#twArrow)"/>
+    
+    <line x1="150" y1="150" x2="320" y2="80" stroke="#6b6f79" stroke-width="1.2"/>
+    <line x1="320" y1="80" x2="150" y2="150" stroke="#6b6f79" stroke-width="1.2"/>
+    <line x1="320" y1="220" x2="150" y2="150" stroke="#6b6f79" stroke-width="1.2"/>
+    <line x1="150" y1="150" x2="320" y2="220" stroke="#6b6f79" stroke-width="1.2"/>
+    <line x1="490" y1="150" x2="320" y2="80" stroke="#6b6f79" stroke-width="1.2"/>
+    <line x1="320" y1="80" x2="490" y2="150" stroke="#6b6f79" stroke-width="1.2"/>
+    <line x1="490" y1="150" x2="320" y2="220" stroke="#6b6f79" stroke-width="1.2"/>
+    <line x1="320" y1="220" x2="490" y2="150" stroke="#6b6f79" stroke-width="1.2"/>
     <text x="320" y="150" text-anchor="middle" font-family="IBM Plex Mono" font-size="9.5" fill="#6b6f79">${label}</text>
     <rect x="70" y="122" width="160" height="56" rx="10" fill="#222735" stroke="rgba(255,90,54,.45)" stroke-width="1.2"/>
     <text x="150" y="146" text-anchor="middle" font-family="Fraunces" font-size="13" font-weight="600" fill="#f5f3ec">${core}</text>

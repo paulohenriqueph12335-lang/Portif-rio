@@ -33,17 +33,17 @@ window.I18N_PT = {
   cases: {
     eyebrow: "Cases em destaque",
     title: "Resultados mensuráveis em relacionamento, dados e operação.",
-    talk: "Falar sobre este case →",
+    talk: "Falar sobre este case",
     case4: {
       "tag1": "Business Case · Produto & IA",
       "tag2": "2026",
       "title": "Tradutor Documental",
       "desc": "Tudo começou observando um trabalho cheio de detalhe: tradução juramentada. Número da Tradução Pública, livro, folha, notas entre colchetes — tudo feito à mão, documento por documento. A pergunta foi a de sempre: será que existe uma forma melhor? Virou um sistema completo.",
-      "b1": "Fluxo completo: envio → tradução → revisão → Word final numerado",
+      "b1": "Fluxo completo: envio, tradução, revisão e Word final numerado",
       "b2": "5 idiomas e 6 formatos, com leitura (OCR) de documentos digitalizados",
       "b3": "Continua funcionando mesmo quando a IA ou a tradução automática param",
       "openBtn": "Abrir Business Case",
-      "story": "Ver a história e as telas →"
+      "story": "Ver a história e as telas"
     },
     case1: {
       tag1: "Business Case · Automação & BI",
@@ -100,7 +100,7 @@ window.I18N_PT = {
   skills: {
     eyebrow: "Ferramentas que encontrei pelo caminho",
     title: "A curiosidade é onde meus projetos começam.",
-    intro: "Quando alguém diz \"sempre fizemos assim.\" ↓ Quando uma planilha começa a ficar grande demais. ↓ Quando um processo depende de gente demais. ↓ Quando tarefas repetitivas roubam tempo. ↓ Quando os dados contam uma história diferente da percepção. É aí que eu me interesso — e foi assim que fui encontrando estas ferramentas pelo caminho, não o contrário.",
+    intro: "Quando alguém diz \"sempre fizemos assim.\" Quando uma planilha começa a ficar grande demais. Quando um processo depende de gente demais. Quando tarefas repetitivas roubam tempo. Quando os dados contam uma história diferente da percepção. É aí que eu me interesso — e foi assim que fui encontrando estas ferramentas pelo caminho, não o contrário.",
     g1: { title: "Customer Success", t1: "Onboarding", t2: "Retenção", t3: "Churn Prevention", t4: "Jornada do Cliente", t5: "NPS", t6: "CSAT" },
     g2: { title: "Consultoria & Processos", t1: "Business Analysis", t2: "Business Intelligence", t3: "Process Improvement", t4: "KPIs/SLAs" },
     g3: { title: "Vendas & Negócios", t1: "Prospecção B2B", t2: "Vendas Consultivas", t3: "Cross-sell", t4: "Negociação Estratégica" },
@@ -125,7 +125,7 @@ window.I18N_PT = {
   },
   footer: {
     rights: "Todos os direitos reservados.",
-    backToTop: "Voltar ao topo ↑",
+    backToTop: "Voltar ao topo",
     backToPortfolio: "Voltar para o portfólio"
   },
   workspace: {
@@ -492,7 +492,7 @@ window.I18N_PT = {
       "E se um dia faltar assunto... posso pegar um violão e fingir que canto.",
       "E não, não é só qualidade — tenho meus defeitos, como todo ser humano, tá?",
       "Mas essa parte a gente deixa como segredo altamente guardado.",
-      "Vem comigo nessa aventura de saber quem eu sou. ↓"
+      "Vem comigo nessa aventura de saber quem eu sou."
     ],
     portrait: {
       eyebrow: "Prazer, esse sou eu",

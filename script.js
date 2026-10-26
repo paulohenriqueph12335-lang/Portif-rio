@@ -80,3 +80,12 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
   window.addEventListener('resize', update);
   update();
 })();
+
+/* ============================================================
+   Sem modo offline: remove o service worker de quem já tinha
+   ============================================================ */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations()
+    .then((registrations) => registrations.forEach((r) => r.unregister()))
+    .catch(() => {});
+}

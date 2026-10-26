@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="i18n.css">
   <link rel="stylesheet" href="about.css">
   <link rel="stylesheet" href="deck.css">
-  <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
@@ -230,15 +229,5 @@
   <script src="script.js"></script>
   <script src="about.js"></script>
   <script src="deck.js"></script>
-
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("service-worker.js").catch(function (err) {
-          console.warn("Service worker não registrado:", err);
-        });
-      });
-    }
-  </script>
 </body>
 </html>

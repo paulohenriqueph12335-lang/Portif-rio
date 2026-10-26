@@ -41,15 +41,16 @@ function applyLanguage(lang, opts){
     });
   });
 
-  /* metadados */
-  if (dict.meta) {
-    if (dict.meta.title) document.title = dict.meta.title;
+  /* metadados — cada página pode apontar os seus com <body data-i18n-meta="..."> */
+  const meta = resolve(dict, document.body.dataset.i18nMeta || 'meta');
+  if (meta) {
+    if (meta.title) document.title = meta.title;
     const descTag = document.querySelector('meta[name="description"]');
-    if (descTag && dict.meta.description) descTag.setAttribute('content', dict.meta.description);
+    if (descTag && meta.description) descTag.setAttribute('content', meta.description);
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle && dict.meta.title) ogTitle.setAttribute('content', dict.meta.title);
+    if (ogTitle && meta.title) ogTitle.setAttribute('content', meta.title);
     const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc && dict.meta.description) ogDesc.setAttribute('content', dict.meta.description);
+    if (ogDesc && meta.description) ogDesc.setAttribute('content', meta.description);
   }
 
   document.querySelectorAll('.lang-btn').forEach(btn => {

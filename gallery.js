@@ -97,13 +97,14 @@ if (overlay) {
   const nextLightboxBtn = document.getElementById('galNext');
 
   const triggers = Array.from(document.querySelectorAll('[data-gallery-trigger]'));
-  const slides = triggers.map(btn => {
-    const card = btn.closest('.slide');
+  /* lido na hora de abrir, para acompanhar a troca de idioma */
+  const slides = triggers.map(btn => () => {
+    const card = btn.closest('.slide, .tr-shot');
     const img = btn.querySelector('img');
     return {
       src: img ? img.getAttribute('src') : '',
       alt: img ? img.getAttribute('alt') : '',
-      tag: card ? (card.querySelector('.slide-tag')?.textContent || '') : '',
+      tag: card ? (card.querySelector('.slide-tag, .tr-shot-tag')?.textContent || '') : '',
       title: card ? (card.querySelector('h3')?.textContent || '') : '',
     };
   });
@@ -111,7 +112,7 @@ if (overlay) {
   let current = 0;
 
   function render(){
-    const s = slides[current];
+    const s = slides[current] && slides[current]();
     if(!s) return;
     imageEl.src = s.src;
     imageEl.alt = s.alt;

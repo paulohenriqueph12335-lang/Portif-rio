@@ -43,7 +43,7 @@ window.I18N_PT = {
       "b2": "5 idiomas e 6 formatos, com leitura (OCR) de documentos digitalizados",
       "b3": "Continua funcionando mesmo quando a IA ou a tradução automática param",
       "openBtn": "Abrir Business Case",
-      "repo": "Ver no GitHub ↗"
+      "story": "Ver a história e as telas →"
     },
     case1: {
       tag1: "Business Case · Automação & BI",
@@ -370,6 +370,100 @@ window.I18N_PT = {
         "a3t": "IA é parceira, não muleta",
         "a3s": "A IA acelerou a construção, mas as regras, o fluxo e as prioridades vieram de entender o problema."
       }
+    }
+  },
+  translatorPage: {
+    "meta": {
+      "title": "Tradutor Documental — Paulo Henrique Santos Brito",
+      "description": "Como um trabalho de tradução juramentada feito à mão virou um fluxo prático, mais rápido e sem abrir mão da qualidade."
+    },
+    "storyLabel": "A história do projeto",
+    "hero": {
+      "eyebrow": "Business Case · Produto & IA · 2026",
+      "title": "Tradutor Documental",
+      "lead": "Como um trabalho feito à mão, documento por documento, virou um fluxo prático: mais rápido, sem abrir mão da qualidade."
+    },
+    "summary": {
+      "label": "Em poucas palavras",
+      "text": "Um sistema web para equipes de tradução juramentada. O documento entra, é lido e traduzido automaticamente, passa por revisão humana com o original ao lado e sai como Word final, já numerado e na diagramação juramentada.",
+      "f1l": "idiomas",
+      "f2l": "formatos de entrada",
+      "f3l": "arquivos por envio",
+      "f4l": "revisado por uma pessoa"
+    },
+    "c1": {
+      "title": "O problema que eu vi",
+      "p1": "Tradução juramentada é um trabalho cheio de regra: número da Tradução Pública, livro e folha de cada tradutor, notas entre colchetes, linhas em branco fechadas com traços.",
+      "p2": "Observando o dia a dia, percebi que o gargalo não era traduzir. Era tudo em volta: conferir, numerar, diagramar de novo no Word e garantir que nada saísse sem revisão. Cada detalhe esquecido virava retrabalho."
+    },
+    "c2": {
+      "title": "A pergunta de sempre",
+      "quote": "\"Existe uma forma melhor de fazer isso?\"",
+      "p1": "A resposta não podia ser só \"mais rápido\". Uma tradução juramentada rápida e errada não serve para nada. O desafio era ganhar agilidade e, ao mesmo tempo, aumentar a qualidade."
+    },
+    "c3": {
+      "title": "Como construí",
+      "p1": "Antes do código, escrevi as regras: como a numeração funciona, quem pode concluir, o que acontece quando algo falha. Foram 28 decisões documentadas. A IA entrou como parceira para construir mais rápido, mas o desenho veio de entender o ofício.",
+      "r1t": "O documento manda",
+      "r1s": "A tela mostra o documento do jeito que ele vai sair.",
+      "r2t": "Nada é concluído sem uma pessoa",
+      "r2s": "A máquina adianta o trabalho; a revisão humana garante o resultado.",
+      "r3t": "O trabalho não para",
+      "r3s": "Se a IA ou a tradução automática falharem, o fluxo continua."
+    },
+    "c4": {
+      "title": "Como funciona na prática",
+      "p1": "Do envio ao Word final, em seis telas.",
+      "galleryLabel": "Telas do sistema",
+      "zoom": "Ampliar imagem",
+      "note": "Telas reais do sistema, com documentos e nomes fictícios. Toque em uma imagem para ampliar."
+    },
+    "shots": {
+      "s1": {
+        "tag": "01 · Envio",
+        "title": "Nova tradução em quatro etapas",
+        "desc": "Escolhe a modalidade e arrasta os arquivos. Antes de começar, um resumo confere documentos, idiomas, equipe e protocolo."
+      },
+      "s2": {
+        "tag": "02 · Acompanhamento",
+        "title": "Fila organizada por fases",
+        "desc": "Produção, conferência, aprovação e entrega: cada documento mostra em que ponto está e quanto falta."
+      },
+      "s3": {
+        "tag": "03 · Documento",
+        "title": "O caminho de cada documento",
+        "desc": "Envio, tradução, revisão, prévia, conclusão e Word final. Quando o tipo de documento é novo, o sistema pede atenção redobrada."
+      },
+      "s4": {
+        "tag": "04 · Revisão",
+        "title": "Original e Word lado a lado",
+        "desc": "A prévia já sai na diagramação juramentada. Quem revisa compara página por página, sem abrir dois programas."
+      },
+      "s5": {
+        "tag": "05 · Conclusão",
+        "title": "Conferência antes de concluir",
+        "desc": "Uma lista objetiva: ordem, nomes, números e formatação. Só depois o sistema numera e gera o Word final."
+      },
+      "s6": {
+        "tag": "06 · Gestão",
+        "title": "A operação à vista",
+        "desc": "Recebidas, concluídas, acerto de primeira e tempo até concluir: a liderança enxerga onde melhorar."
+      }
+    },
+    "c5": {
+      "title": "Praticidade, qualidade e agilidade",
+      "p1": "O ganho não veio de uma coisa só, mas de três que andam juntas.",
+      "k1t": "Praticidade",
+      "k1s": "Envio, revisão, numeração e Word final no mesmo lugar. Ninguém precisa diagramar de novo nem controlar numeração em planilha.",
+      "k2t": "Qualidade",
+      "k2s": "Original e tradução lado a lado, lista de conferência antes de concluir e alerta para documentos novos. O erro é pego antes de sair.",
+      "k3t": "Agilidade",
+      "k3s": "Leitura e tradução automáticas adiantam o trabalho, e a numeração e o Word final saem na própria conclusão."
+    },
+    "closing": {
+      "title": "O problema foi visto, entendido e resolvido.",
+      "text": "O que antes dependia de memória e trabalho manual agora segue um fluxo claro. Quem revisa pode se concentrar no que importa: a tradução estar certa.",
+      "back": "Ver outros cases"
     }
   },
   gallery: {

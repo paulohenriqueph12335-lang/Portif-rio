@@ -43,7 +43,7 @@ window.I18N_EN = {
       "b2": "5 languages and 6 formats, with OCR for scanned documents",
       "b3": "Keeps working even when AI or machine translation stops",
       "openBtn": "Open Business Case",
-      "repo": "View on GitHub ↗"
+      "story": "See the story and screens →"
     },
     case1: {
       tag1: "Business Case · Automation & BI",
@@ -370,6 +370,100 @@ window.I18N_EN = {
         "a3t": "AI is a partner, not a crutch",
         "a3s": "AI sped up the build, but the rules, the flow and the priorities came from understanding the problem."
       }
+    }
+  },
+  translatorPage: {
+    "meta": {
+      "title": "Document Translator — Paulo Henrique Santos Brito",
+      "description": "How hand-made sworn translation work became a practical flow: faster, without giving up quality."
+    },
+    "storyLabel": "The project's story",
+    "hero": {
+      "eyebrow": "Business Case · Product & AI · 2026",
+      "title": "Document Translator",
+      "lead": "How work done by hand, document by document, became a practical flow: faster, without giving up quality."
+    },
+    "summary": {
+      "label": "In a few words",
+      "text": "A web system for sworn translation teams. A document comes in, is read and translated automatically, goes through human review with the original alongside, and comes out as a final Word file, already numbered and in sworn-translation layout.",
+      "f1l": "languages",
+      "f2l": "input formats",
+      "f3l": "files per upload",
+      "f4l": "reviewed by a person"
+    },
+    "c1": {
+      "title": "The problem I saw",
+      "p1": "Sworn translation is work full of rules: Public Translation number, each translator's book and page, notes in brackets, blank lines closed off with dashes.",
+      "p2": "Watching the day-to-day, I realized the bottleneck wasn't translating. It was everything around it: checking, numbering, laying it out again in Word and making sure nothing went out without review. Every forgotten detail turned into rework."
+    },
+    "c2": {
+      "title": "The usual question",
+      "quote": "\"Is there a better way to do this?\"",
+      "p1": "The answer couldn't just be \"faster\". A fast but wrong sworn translation is worthless. The challenge was to gain speed and, at the same time, raise quality."
+    },
+    "c3": {
+      "title": "How I built it",
+      "p1": "Before the code, I wrote the rules: how numbering works, who can complete a translation, what happens when something fails. That came to 28 documented decisions. AI came in as a partner to build faster, but the design came from understanding the craft.",
+      "r1t": "The document rules",
+      "r1s": "The screen shows the document exactly as it will come out.",
+      "r2t": "Nothing is finished without a person",
+      "r2s": "The machine gets the work ahead; human review guarantees the result.",
+      "r3t": "The work doesn't stop",
+      "r3s": "If AI or machine translation fails, the flow keeps going."
+    },
+    "c4": {
+      "title": "How it works in practice",
+      "p1": "From upload to final Word file, in six screens.",
+      "galleryLabel": "System screens",
+      "zoom": "Enlarge image",
+      "note": "Real system screens, with fictional documents and names. Tap an image to enlarge it."
+    },
+    "shots": {
+      "s1": {
+        "tag": "01 · Upload",
+        "title": "New translation in four steps",
+        "desc": "Pick the type of translation and drag in the files. Before starting, a summary checks documents, languages, team and protocol."
+      },
+      "s2": {
+        "tag": "02 · Tracking",
+        "title": "A queue organized by phase",
+        "desc": "Production, checking, approval and delivery: each document shows where it is and what's left."
+      },
+      "s3": {
+        "tag": "03 · Document",
+        "title": "Each document's path",
+        "desc": "Upload, translation, review, preview, completion and final Word file. When a document type is new, the system asks for extra attention."
+      },
+      "s4": {
+        "tag": "04 · Review",
+        "title": "Original and Word side by side",
+        "desc": "The preview already comes out in sworn-translation layout. The reviewer compares page by page, without opening two programs."
+      },
+      "s5": {
+        "tag": "05 · Completion",
+        "title": "A check before completing",
+        "desc": "A clear checklist: order, names, numbers and formatting. Only then does the system number it and generate the final Word file."
+      },
+      "s6": {
+        "tag": "06 · Management",
+        "title": "The operation at a glance",
+        "desc": "Received, completed, right the first time and time to complete: leadership sees where to improve."
+      }
+    },
+    "c5": {
+      "title": "Practicality, quality and speed",
+      "p1": "The gain didn't come from one thing, but from three that go together.",
+      "k1t": "Practicality",
+      "k1s": "Upload, review, numbering and final Word file in one place. No one has to lay documents out again or track numbering in a spreadsheet.",
+      "k2t": "Quality",
+      "k2s": "Original and translation side by side, a checklist before completing and an alert for new document types. Mistakes are caught before they go out.",
+      "k3t": "Speed",
+      "k3s": "Automatic reading and translation get the work ahead, and numbering and the final Word file come out at completion."
+    },
+    "closing": {
+      "title": "The problem was seen, understood and solved.",
+      "text": "What used to depend on memory and manual work now follows a clear flow. Reviewers can focus on what matters: the translation being right.",
+      "back": "See other cases"
     }
   },
   gallery: {

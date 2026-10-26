@@ -1,7 +1,7 @@
 // Service Worker do portfólio — cacheia tudo no 1º acesso para funcionar
 // depois sem internet. Sobe a versão do CACHE_NAME quando o conteúdo mudar,
 // assim o navegador sabe que precisa baixar tudo de novo.
-const CACHE_NAME = 'ph-portfolio-v3';
+const CACHE_NAME = 'ph-portfolio-v4';
 
 const ASSETS = [
   './',
@@ -54,7 +54,9 @@ const ASSETS = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(ASSETS))
+      // cache: 'reload' ignora o cache HTTP do navegador, para não guardar
+      // uma versão antiga do site junto com a nova.
+      .then((cache) => cache.addAll(ASSETS.map((url) => new Request(url, { cache: 'reload' }))))
       .then(() => self.skipWaiting())
   );
 });
@@ -69,21 +71,42 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Cache-first: responde do cache instantaneamente (e offline);
-// se não estiver em cache, busca na rede e guarda para a próxima vez.
+// Páginas, scripts, estilos e textos: rede primeiro, para as atualizações
+// aparecerem na hora; sem internet, usa a cópia guardada.
+// Fontes e imagens: cache primeiro, porque quase nunca mudam.
+function isCode(request) {
+  if (request.mode === 'navigate') return true;
+  return /\.(html|js|css|json)$/.test(new URL(request.url).pathname);
+}
+
+function saveCopy(request, response) {
+  if (response.ok && new URL(request.url).origin === self.location.origin) {
+    const copy = response.clone();
+    caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+  }
+  return response;
+}
+
 self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
+  const { request } = event;
+  if (request.method !== 'GET') return;
+
+  if (isCode(request)) {
+    event.respondWith(
+      fetch(request, { cache: 'no-cache' })
+        .then((response) => saveCopy(request, response))
+        .catch(() =>
+          caches.match(request).then((cached) =>
+            cached || (request.mode === 'navigate' ? caches.match('./index.html') : undefined)
+          )
+        )
+    );
+    return;
+  }
 
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-          return response;
-        })
-        .catch(() => caches.match('./index.html'));
-    })
+    caches.match(request).then((cached) =>
+      cached || fetch(request).then((response) => saveCopy(request, response))
+    )
   );
 });

@@ -34,6 +34,17 @@ window.I18N_EN = {
     eyebrow: "Featured cases",
     title: "Measurable results in relationship, data and operations.",
     talk: "Talk about this case →",
+    case4: {
+      "tag1": "Business Case · Product & AI",
+      "tag2": "2026",
+      "title": "Document Translator",
+      "desc": "It all started by watching a job full of detail: sworn translation. Public Translation number, book, page, notes in brackets — all done by hand, document by document. The question was the usual one: is there a better way? It turned into a complete system.",
+      "b1": "Complete flow: upload → translation → review → final numbered Word file",
+      "b2": "5 languages and 6 formats, with OCR for scanned documents",
+      "b3": "Keeps working even when AI or machine translation stops",
+      "openBtn": "Open Business Case",
+      "repo": "View on GitHub ↗"
+    },
     case1: {
       tag1: "Business Case · Automation & BI",
       tag2: "2025 — present",
@@ -109,12 +120,11 @@ window.I18N_EN = {
     title: "Open to Project Consultant or Project Analyst roles — in CS, CX and Business Analysis.",
     text: "You probably like solving problems as much as I do — so I think we already have a good reason to talk. Diadema – SP · remote or on-site in Greater São Paulo.",
     btnEmail: "Let's talk",
-    btnLinkedIn: "LinkedIn",
-    btnSite: "Site on Railway"
+    btnLinkedIn: "LinkedIn"
+
   },
   footer: {
     rights: "All rights reserved.",
-    railway: "Railway ↗",
     backToTop: "Back to top ↑",
     backToPortfolio: "Back to portfolio"
   },
@@ -171,6 +181,7 @@ window.I18N_EN = {
         ],
         sectionTitle2: "Automatic reply classification",
         sectionTitle3: "Classification cascade",
+        badges: [["INTEREST", "green"], ["NEGATIVE", "rose"], ["AUTO_REPLY", "signal"], ["BOUNCE", "gray"], ["SPAM_REPORT", "rose"], ["UNDEFINED", "teal"]],
         stageLocal: "Local model", stageCloud: "Cloud model", stageFallback: "Keywords (fallback)",
         p: "The AI automatically classifies every incoming reply, cutting down time spent on manual triage and prioritizing whoever showed genuine interest."
       },
@@ -198,6 +209,166 @@ window.I18N_EN = {
         a1t: "Business rules matter more than technology", a1s: "A well-calibrated sending limit avoided more headaches than any sophisticated model.",
         a2t: "Documenting saves rework", a2s: "Much of the time saved came from a documented decision, not from beautiful code.",
         a3t: "A metric without context doesn't tell the whole story", a3s: "A good number only really makes sense once someone understands the \"before.\""
+      }
+    }
+  },
+  workspaceTranslate: {
+    "title": "Document Translator",
+    "modules": {
+      "contexto": "Context",
+      "desafio": "Challenge",
+      "diagnostico": "Diagnosis",
+      "estrategia": "Strategy",
+      "solucao": "Solution",
+      "arquitetura": "Conceptual Architecture",
+      "resultados": "Results",
+      "aprendizados": "Learnings"
+    },
+    "content": {
+      "contexto": {
+        "sectionTitle": "How it all started",
+        "p": "Sworn translation is work full of rules: Public Translation number, book and page per translator, notes in brackets, blank lines closed off with dashes. Much of it was done by hand, document by document — and every forgotten detail turned into rework.",
+        "k1l": "Languages",
+        "k1v": "5",
+        "k1s": "PT, EN, FR, IT and ES",
+        "k2l": "Formats",
+        "k2v": "6",
+        "k2s": "DOCX, PDF, scanned PDF, JPG, PNG, PPTX",
+        "k3l": "Documented decisions",
+        "k3v": "28",
+        "k3s": "architecture records",
+        "k4l": "Automated tests",
+        "k4v": "52",
+        "k4s": "test files"
+      },
+      "desafio": {
+        "sectionTitle": "What caught my attention",
+        "d1t": "Translate without losing the layout",
+        "d1s": "The final document has to keep the original's structure — getting the text right isn't enough.",
+        "d2t": "Respect sworn-translation rules",
+        "d2s": "Numbering, book, page and translator's notes follow conventions with no room for improvising.",
+        "d3t": "Don't depend on AI",
+        "d3s": "If machine translation or AI stopped, the work couldn't stop with it."
+      },
+      "diagnostico": {
+        "sectionTitle": "What the real problem was",
+        "p": "Before writing a single line, I went to understand how a document travels from arrival to delivery. I found the bottleneck wasn't translating — it was everything around it: checking, numbering, laying out, and making sure nothing went out without review.",
+        "d1t": "Scattered review",
+        "d1s": "There was no single place to compare original and translation side by side.",
+        "d2t": "Numbering by hand",
+        "d2s": "Public Translation number, book and page tracked manually, translator by translator.",
+        "d3t": "Layout rebuilt from scratch",
+        "d3s": "Every translation was laid out again in Word, even though it always followed the same pattern."
+      },
+      "estrategia": {
+        "sectionTitle": "How I thought about the solution",
+        "p": "Instead of a generic machine translator, I decided to build something that thinks like Brazilian sworn translation. I wrote the rules and decisions before the code — and used AI as a partner to build faster.",
+        "sectionTitle2": "Principles that guided the decisions",
+        "d1t": "The document rules",
+        "d1s": "The interface shows the document exactly as it will come out.",
+        "d2t": "Nothing is finished without a person",
+        "d2s": "The machine gets the work ahead, but human review is mandatory before finishing.",
+        "d3t": "The process keeps going without AI",
+        "d3s": "AI is optional: if it stops, the flow continues."
+      },
+      "solucao": {
+        "sectionTitle": "From upload to final Word file",
+        "steps": [
+          [
+            "Upload",
+            "Batches of up to 100 files, each document with its own status."
+          ],
+          [
+            "Reading",
+            "Local OCR for scanned documents and photos."
+          ],
+          [
+            "Translation",
+            "Free, local machine translation; AI only as an option."
+          ],
+          [
+            "Review",
+            "Original and translation side by side, to check calmly."
+          ],
+          [
+            "Word preview",
+            "Sworn-translation layout ready for the final check."
+          ],
+          [
+            "Completion",
+            "A person completes it: the system numbers it and generates the final Word file."
+          ]
+        ],
+        "sectionTitle2": "Status of each document",
+        "badges": [
+          [
+            "SENT",
+            "gray"
+          ],
+          [
+            "TRANSLATING",
+            "teal"
+          ],
+          [
+            "TO REVIEW",
+            "signal"
+          ],
+          [
+            "READY",
+            "green"
+          ],
+          [
+            "REDO",
+            "rose"
+          ],
+          [
+            "COMPLETED",
+            "teal"
+          ]
+        ],
+        "sectionTitle3": "If something fails",
+        "stageLocal": "Local translation",
+        "stageCloud": "AI (optional)",
+        "stageFallback": "Human review",
+        "p": "Every step has its own status and errors: a reading failure never shows up as a translation failure, and no document is completed without a person checking it."
+      },
+      "arquitetura": {
+        "sectionTitle": "Conceptual topology",
+        "p": "Four parts that talk to each other: the <b>web interface</b> (where the team works), the <b>API</b> (rules, permissions and audit), the <b>worker</b> (reading, translating and rebuilding documents) and the <b>database with private storage</b>. Documents never leave the environment.",
+        "sectionTitle2": "Decisions that hold the system up",
+        "d1t": "A queue that never loses work",
+        "d1s": "If something fails halfway, the document resumes where it stopped.",
+        "d2t": "Private files",
+        "d2s": "Documents and credentials stay out of logs and out of the repository.",
+        "d3t": "Each role sees only what it uses",
+        "d3s": "Each person sees only the screens and documents they need.",
+        "diagramCore": "API",
+        "diagramCoreSub": "rules · permissions",
+        "diagramExec": "Web interface",
+        "diagramExecSub": "team workspace",
+        "diagramA": "Worker",
+        "diagramASub": "OCR · translation",
+        "diagramBC": "Database + files",
+        "diagramBCSub": "private · audited",
+        "diagramLabel": "persistent queue"
+      },
+      "resultados": {
+        "sectionTitle": "What the project delivers",
+        "r1t": "A complete end-to-end flow",
+        "r1s": "From upload to the final numbered Word file, without leaving the system.",
+        "r2t": "The original's layout preserved",
+        "r2s": "6 input formats and 5 languages, with local OCR for scanned documents.",
+        "r3t": "A solid base to grow on",
+        "r3s": "28 documented architecture decisions and 52 automated test files."
+      },
+      "aprendizados": {
+        "sectionTitle": "What I learned",
+        "a1t": "Understanding the craft comes before code",
+        "a1s": "Sworn-translation conventions shaped the system far more than the technology did.",
+        "a2t": "Writing decisions down saves arguments",
+        "a2s": "Every important choice became a record — easy to explain the why later.",
+        "a3t": "AI is a partner, not a crutch",
+        "a3s": "AI sped up the build, but the rules, the flow and the priorities came from understanding the problem."
       }
     }
   },

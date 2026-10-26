@@ -25,7 +25,9 @@ function t(path){
   }
   return '';
 }
-function moduleTitle(id){ return t('workspace.modules.' + id) || id; }
+let CASE_BASE = 'workspace';
+function base(){ return CASE_BASE; }
+function moduleTitle(id){ return t(base() + '.modules.' + id) || id; }
 function isLive(id){ return id === 'solucao'; }
 
 /* ============================================================
@@ -33,7 +35,7 @@ function isLive(id){ return id === 'solucao'; }
    ============================================================ */
 const RENDER = {
   contexto(){
-    const c = 'workspace.content.contexto.';
+    const c = base()+'.content.contexto.';
     return `
       <div class="tw-section-title">${t(c+'sectionTitle')}</div>
       <p class="tw-p">${t(c+'p')}</p>
@@ -45,7 +47,7 @@ const RENDER = {
       </div>`;
   },
   desafio(){
-    const c = 'workspace.content.desafio.';
+    const c = base()+'.content.desafio.';
     return `
       <div class="tw-section-title">${t(c+'sectionTitle')}</div>
       <ul class="tw-node-list">
@@ -55,7 +57,7 @@ const RENDER = {
       </ul>`;
   },
   diagnostico(){
-    const c = 'workspace.content.diagnostico.';
+    const c = base()+'.content.diagnostico.';
     return `
       <div class="tw-section-title">${t(c+'sectionTitle')}</div>
       <p class="tw-p">${t(c+'p')}</p>
@@ -66,7 +68,7 @@ const RENDER = {
       </ul>`;
   },
   estrategia(){
-    const c = 'workspace.content.estrategia.';
+    const c = base()+'.content.estrategia.';
     return `
       <div class="tw-section-title">${t(c+'sectionTitle')}</div>
       <p class="tw-p">${t(c+'p')}</p>
@@ -78,21 +80,16 @@ const RENDER = {
       </ul>`;
   },
   solucao(){
-    const c = 'workspace.content.solucao.';
-    const dict = window.PH_I18N ? window.PH_I18N.t('workspace.content.solucao.steps') : null;
+    const c = base()+'.content.solucao.';
+    const dict = window.PH_I18N ? window.PH_I18N.t(base()+'.content.solucao.steps') : null;
     const steps = Array.isArray(dict) ? dict : [];
+    const bd = window.PH_I18N ? window.PH_I18N.t(base()+'.content.solucao.badges') : null;
+    const badges = Array.isArray(bd) ? bd : [];
     return `
       <div class="tw-section-title">${t(c+'sectionTitle')}</div>
       <div class="tw-flow-row">${steps.map((s,i)=>`<div class="tw-flow-step"><div class="tw-flow-num">${String(i+1).padStart(2,'0')}</div><div class="tw-flow-text"><b>${s[0]}</b><span>${s[1]}</span></div></div>`).join('')}</div>
       <div class="tw-section-title">${t(c+'sectionTitle2')}</div>
-      <div class="tw-badge-row">
-        <span class="tw-badge tw-green">INTERESSE</span>
-        <span class="tw-badge tw-rose">NEGATIVO</span>
-        <span class="tw-badge tw-signal">AUTO_REPLY</span>
-        <span class="tw-badge tw-gray">BOUNCE</span>
-        <span class="tw-badge tw-rose">SPAM_REPORT</span>
-        <span class="tw-badge tw-teal">INDEFINIDO</span>
-      </div>
+      <div class="tw-badge-row">${badges.map(b=>`<span class="tw-badge tw-${b[1]}">${b[0]}</span>`).join('')}</div>
       <div class="tw-section-title">${t(c+'sectionTitle3')}</div>
       <div class="tw-cascade">
         <span class="tw-stage">${t(c+'stageLocal')}</span><span class="tw-arrow">→</span>
@@ -102,7 +99,7 @@ const RENDER = {
       <p class="tw-p">${t(c+'p')}</p>`;
   },
   arquitetura(){
-    const c = 'workspace.content.arquitetura.';
+    const c = base()+'.content.arquitetura.';
     return `
       <div class="tw-section-title">${t(c+'sectionTitle')}</div>
       <div class="tw-diagram-box">${archDiagram()}</div>
@@ -115,19 +112,19 @@ const RENDER = {
       </ul>`;
   },
   resultados(){
-    const c = 'workspace.content.resultados.';
+    const c = base()+'.content.resultados.';
     const items = [['r1t','r1s'],['r2t','r2s'],['r3t','r3s']];
     return `<div class="tw-section-title">${t(c+'sectionTitle')}</div>${items.map(([kt,ks])=>`<div class="tw-result-item"><div class="tw-result-check"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>${t(c+kt)}</b><span>${t(c+ks)}</span></div></div>`).join('')}`;
   },
   aprendizados(){
-    const c = 'workspace.content.aprendizados.';
+    const c = base()+'.content.aprendizados.';
     const items = [['a1t','a1s'],['a2t','a2s'],['a3t','a3s']];
     return `<div class="tw-section-title">${t(c+'sectionTitle')}</div>${items.map(([kt,ks])=>`<div class="tw-result-item"><div class="tw-result-check"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>${t(c+kt)}</b><span>${t(c+ks)}</span></div></div>`).join('')}`;
   }
 };
 
 function archDiagram(){
-  const c = 'workspace.content.arquitetura.';
+  const c = base()+'.content.arquitetura.';
   const core = t(c+'diagramCore'), coreSub = t(c+'diagramCoreSub');
   const exec = t(c+'diagramExec'), execSub = t(c+'diagramExecSub');
   const a = t(c+'diagramA'), aSub = t(c+'diagramASub');
@@ -166,7 +163,6 @@ function byId(id){ return document.getElementById(id); }
 
 const overlay = byId('twOverlay');
 if (overlay) {
-  const openBtn = byId('openCaseWorkspace');
   const closeBtn = byId('twClose');
   const dock = byId('twDock');
   const canvas = byId('twCanvas');
@@ -178,11 +174,27 @@ if (overlay) {
   const openWindows = new Map();
   let built = false;
 
-  function openWorkspace(){
+  const titleEl = overlay.querySelector('.tw-title b');
+
+  function resetWindows(){
+    openWindows.forEach(w => w.el.remove());
+    openWindows.clear();
+    taskbar.innerHTML = '';
+    taskbar.classList.remove('has-items');
+  }
+
+  function openWorkspace(caseBase){
+    caseBase = caseBase || 'workspace';
+    if (caseBase !== CASE_BASE) { CASE_BASE = caseBase; built = false; resetWindows(); }
+    if (titleEl) {
+      titleEl.setAttribute('data-i18n', CASE_BASE + '.title');
+      titleEl.textContent = t(CASE_BASE + '.title');
+    }
     overlay.hidden = false;
     requestAnimationFrame(()=> overlay.classList.add('is-open'));
     document.body.style.overflow = 'hidden';
     if(!built){ buildDock(); DEFAULT_OPEN.forEach((id,i)=> openWindow(id,i)); built = true; }
+    updateEmpty(); updateCount();
   }
   function closeWorkspace(){
     overlay.classList.remove('is-open');
@@ -190,7 +202,9 @@ if (overlay) {
     setTimeout(()=>{ overlay.hidden = true; }, 300);
   }
 
-  if (openBtn) openBtn.addEventListener('click', openWorkspace);
+  document.querySelectorAll('[data-case]').forEach(btn => {
+    btn.addEventListener('click', () => openWorkspace(btn.dataset.case));
+  });
   if (closeBtn) closeBtn.addEventListener('click', closeWorkspace);
   document.addEventListener('keydown', e=>{
     if(e.key === 'Escape' && !overlay.hidden) closeWorkspace();

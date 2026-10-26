@@ -34,6 +34,17 @@ window.I18N_PT = {
     eyebrow: "Cases em destaque",
     title: "Resultados mensuráveis em relacionamento, dados e operação.",
     talk: "Falar sobre este case →",
+    case4: {
+      "tag1": "Business Case · Produto & IA",
+      "tag2": "2026",
+      "title": "Tradutor Documental",
+      "desc": "Tudo começou observando um trabalho cheio de detalhe: tradução juramentada. Número da Tradução Pública, livro, folha, notas entre colchetes — tudo feito à mão, documento por documento. A pergunta foi a de sempre: será que existe uma forma melhor? Virou um sistema completo.",
+      "b1": "Fluxo completo: envio → tradução → revisão → Word final numerado",
+      "b2": "5 idiomas e 6 formatos, com leitura (OCR) de documentos digitalizados",
+      "b3": "Continua funcionando mesmo quando a IA ou a tradução automática param",
+      "openBtn": "Abrir Business Case",
+      "repo": "Ver no GitHub ↗"
+    },
     case1: {
       tag1: "Business Case · Automação & BI",
       tag2: "2025 — atual",
@@ -109,12 +120,11 @@ window.I18N_PT = {
     title: "Aberto a vagas de Consultor de Projetos ou Analista de Projetos — em CS, CX e Business Analysis.",
     text: "Provavelmente você gosta de resolver problemas tanto quanto eu — então acho que já temos um bom assunto pra conversar. Diadema – SP · atendimento remoto ou presencial na Grande São Paulo.",
     btnEmail: "Vamos trocar uma ideia",
-    btnLinkedIn: "LinkedIn",
-    btnSite: "Site no Railway"
+    btnLinkedIn: "LinkedIn"
+
   },
   footer: {
     rights: "Todos os direitos reservados.",
-    railway: "Railway ↗",
     backToTop: "Voltar ao topo ↑",
     backToPortfolio: "Voltar para o portfólio"
   },
@@ -171,6 +181,7 @@ window.I18N_PT = {
         ],
         sectionTitle2: "Classificação automática de respostas",
         sectionTitle3: "Cascata de classificação",
+        badges: [["INTERESSE", "green"], ["NEGATIVO", "rose"], ["AUTO_REPLY", "signal"], ["BOUNCE", "gray"], ["SPAM_REPORT", "rose"], ["INDEFINIDO", "teal"]],
         stageLocal: "Modelo local", stageCloud: "Modelo em nuvem", stageFallback: "Palavras-chave (fallback)",
         p: "A IA classifica automaticamente cada resposta recebida, reduzindo o tempo gasto em triagem manual e priorizando quem demonstrou interesse real."
       },
@@ -198,6 +209,166 @@ window.I18N_PT = {
         a1t: "Regra de negócio importa mais que tecnologia", a1s: "Um limite de envio bem calibrado evitou mais dor de cabeça do que qualquer modelo sofisticado.",
         a2t: "Documentar economiza retrabalho", a2s: "Boa parte do tempo ganho veio de decisão registrada, não de código bonito.",
         a3t: "Métrica sem contexto não conta a história toda", a3s: "Um número só faz sentido de verdade quando alguém entende o \"antes\"."
+      }
+    }
+  },
+  workspaceTranslate: {
+    "title": "Tradutor Documental",
+    "modules": {
+      "contexto": "Contexto",
+      "desafio": "Desafio",
+      "diagnostico": "Diagnóstico",
+      "estrategia": "Estratégia",
+      "solucao": "Solução",
+      "arquitetura": "Arquitetura Conceitual",
+      "resultados": "Resultados",
+      "aprendizados": "Aprendizados"
+    },
+    "content": {
+      "contexto": {
+        "sectionTitle": "Como tudo começou",
+        "p": "Tradução juramentada é um trabalho cheio de regra: número da Tradução Pública, livro e folha por tradutor, notas entre colchetes, linhas em branco fechadas com traços. Boa parte disso era feita à mão, documento por documento — e cada detalhe esquecido virava retrabalho.",
+        "k1l": "Idiomas",
+        "k1v": "5",
+        "k1s": "PT, EN, FR, IT e ES",
+        "k2l": "Formatos",
+        "k2v": "6",
+        "k2s": "DOCX, PDF, PDF digitalizado, JPG, PNG, PPTX",
+        "k3l": "Decisões documentadas",
+        "k3v": "28",
+        "k3s": "registros de arquitetura",
+        "k4l": "Testes automatizados",
+        "k4v": "52",
+        "k4s": "arquivos de teste"
+      },
+      "desafio": {
+        "sectionTitle": "O que chamou minha atenção",
+        "d1t": "Traduzir sem perder a forma",
+        "d1s": "O documento final precisa sair com a estrutura do original — não basta o texto estar certo.",
+        "d2t": "Respeitar as regras da juramentada",
+        "d2s": "Numeração, livro, folha e notas do tradutor seguem convenções que não admitem improviso.",
+        "d3t": "Não depender da IA",
+        "d3s": "Se a tradução automática ou a IA parassem, o trabalho não podia parar junto."
+      },
+      "diagnostico": {
+        "sectionTitle": "Qual era o verdadeiro problema",
+        "p": "Antes de escrever qualquer linha, fui entender como um documento caminha do recebimento até a entrega. Descobri que o gargalo não estava em traduzir — estava em tudo o que vem em volta: conferir, numerar, diagramar e garantir que nada saísse sem revisão.",
+        "d1t": "Revisão espalhada",
+        "d1s": "Não havia um lugar único para comparar original e tradução lado a lado.",
+        "d2t": "Numeração à mão",
+        "d2s": "Número da Tradução Pública, livro e folha controlados manualmente, tradutor por tradutor.",
+        "d3t": "Formato refeito do zero",
+        "d3s": "Cada tradução era diagramada de novo no Word, mesmo seguindo sempre o mesmo padrão."
+      },
+      "estrategia": {
+        "sectionTitle": "Como pensei na solução",
+        "p": "Em vez de um tradutor automático genérico, decidi construir algo que pensasse como a tradução juramentada brasileira. Escrevi as regras e as decisões antes do código — e usei IA como parceira para construir mais rápido.",
+        "sectionTitle2": "Princípios que guiaram as decisões",
+        "d1t": "O documento manda",
+        "d1s": "A interface mostra o documento do jeito que ele vai sair.",
+        "d2t": "Nada é concluído sem uma pessoa",
+        "d2s": "A máquina adianta o trabalho, mas a revisão humana é obrigatória antes de concluir.",
+        "d3t": "O processo segue mesmo sem IA",
+        "d3s": "A IA é opcional: se ela parar, o fluxo continua."
+      },
+      "solucao": {
+        "sectionTitle": "Do envio ao Word final",
+        "steps": [
+          [
+            "Envio",
+            "Lotes de até 100 arquivos, cada documento com o próprio estado."
+          ],
+          [
+            "Leitura",
+            "OCR local para documentos digitalizados e fotos."
+          ],
+          [
+            "Tradução",
+            "Tradução automática local e gratuita; IA apenas como opção."
+          ],
+          [
+            "Revisão",
+            "Original e tradução lado a lado, para conferir com calma."
+          ],
+          [
+            "Prévia em Word",
+            "Diagramação juramentada pronta para a conferência final."
+          ],
+          [
+            "Conclusão",
+            "Uma pessoa conclui: o sistema numera e gera o Word final."
+          ]
+        ],
+        "sectionTitle2": "Estados de cada documento",
+        "badges": [
+          [
+            "ENVIADO",
+            "gray"
+          ],
+          [
+            "TRADUZINDO",
+            "teal"
+          ],
+          [
+            "PARA REVISAR",
+            "signal"
+          ],
+          [
+            "PRONTA",
+            "green"
+          ],
+          [
+            "REFAZER",
+            "rose"
+          ],
+          [
+            "CONCLUÍDA",
+            "teal"
+          ]
+        ],
+        "sectionTitle3": "Se algo falhar",
+        "stageLocal": "Tradução local",
+        "stageCloud": "IA (opcional)",
+        "stageFallback": "Revisão humana",
+        "p": "Cada etapa tem estado e erro próprios: uma falha de leitura nunca aparece como falha de tradução, e nenhum documento é concluído sem que uma pessoa confira."
+      },
+      "arquitetura": {
+        "sectionTitle": "Topologia conceitual",
+        "p": "Quatro partes que conversam entre si: a <b>interface web</b> (onde a equipe trabalha), a <b>API</b> (regras, permissões e auditoria), o <b>worker</b> (leitura, tradução e reconstrução dos documentos) e o <b>banco com armazenamento privado</b>. Os documentos nunca saem do ambiente.",
+        "sectionTitle2": "Decisões que sustentam o sistema",
+        "d1t": "Fila que não perde trabalho",
+        "d1s": "Se algo cair no meio do caminho, o documento retoma de onde parou.",
+        "d2t": "Arquivos privados",
+        "d2s": "Documentos e credenciais não entram em registros nem no repositório.",
+        "d3t": "Cada papel vê só o que usa",
+        "d3s": "Cada pessoa enxerga apenas as telas e os documentos de que precisa.",
+        "diagramCore": "API",
+        "diagramCoreSub": "regras · permissões",
+        "diagramExec": "Interface web",
+        "diagramExecSub": "trabalho da equipe",
+        "diagramA": "Worker",
+        "diagramASub": "OCR · tradução",
+        "diagramBC": "Banco + arquivos",
+        "diagramBCSub": "privado · auditado",
+        "diagramLabel": "fila persistente"
+      },
+      "resultados": {
+        "sectionTitle": "O que o projeto entrega",
+        "r1t": "Fluxo completo, de ponta a ponta",
+        "r1s": "Do envio ao Word final numerado, sem sair do sistema.",
+        "r2t": "A forma do original preservada",
+        "r2s": "6 formatos de entrada e 5 idiomas, com OCR local para documentos digitalizados.",
+        "r3t": "Base sólida para crescer",
+        "r3s": "28 decisões de arquitetura documentadas e 52 arquivos de testes automatizados."
+      },
+      "aprendizados": {
+        "sectionTitle": "O que aprendi",
+        "a1t": "Entender o ofício vem antes do código",
+        "a1s": "As convenções da tradução juramentada definiram o sistema muito mais do que a tecnologia.",
+        "a2t": "Escrever as decisões economiza discussão",
+        "a2s": "Cada escolha importante virou um registro — fica fácil explicar o porquê depois.",
+        "a3t": "IA é parceira, não muleta",
+        "a3s": "A IA acelerou a construção, mas as regras, o fluxo e as prioridades vieram de entender o problema."
       }
     }
   },

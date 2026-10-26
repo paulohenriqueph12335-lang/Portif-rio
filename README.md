@@ -11,7 +11,7 @@ Este repositório agora inclui uma landing page estática em `index.html`, com e
 ## Versão offline (PWA)
 
 Este projeto foi adaptado para funcionar como **Progressive Web App**:
-- Todas as fontes (Fraunces, IBM Plex Mono, Inter) são hospedadas localmente em `assets/fonts/` — nenhuma chamada a CDNs externas.
+- Todas as fontes (Fraunces, IBM Plex Mono, Inter) são hospedadas localmente na raiz do projeto (`fonts.css` + arquivos `.woff2`) — nenhuma chamada a CDNs externas.
 - `manifest.json` + `service-worker.js` fazem o cache de todos os arquivos (HTML, CSS, JS, imagens, fontes) no primeiro acesso.
 - Depois do primeiro acesso, o site funciona **sem internet**, inclusive pode ser "instalado" (ícone na tela inicial / atalho).
 
